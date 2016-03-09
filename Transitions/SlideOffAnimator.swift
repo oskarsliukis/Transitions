@@ -6,11 +6,10 @@
 //  Copyright (c) 2015 OL. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class SlideOffAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    var direction: Direction = Direction.Y
+    var direction: Direction = Direction.X
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.4
@@ -44,7 +43,10 @@ class SlideOffAnimator: NSObject, UIViewControllerAnimatedTransitioning {
             toVC.view.alpha = 1
             
             }) { (finished) -> Void in
-                transitionContext.completeTransition(true)
+                transitionContext.completeTransition(!transitionContext.transitionWasCancelled())
+                if (transitionContext.transitionWasCancelled()) {
+                    toVC.view.removeFromSuperview()
+                }
         }
     }
 }

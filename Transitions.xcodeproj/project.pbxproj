@@ -14,6 +14,8 @@
 		71F89F621C905A6F001C6DFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71F89F601C905A6F001C6DFE /* LaunchScreen.storyboard */; };
 		71F89F6C1C905ABC001C6DFE /* SlideOffAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F89F6A1C905ABC001C6DFE /* SlideOffAnimator.swift */; };
 		71F89F6D1C905ABC001C6DFE /* SlideInAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F89F6B1C905ABC001C6DFE /* SlideInAnimator.swift */; };
+		71F89F6F1C906402001C6DFE /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F89F6E1C906402001C6DFE /* Enums.swift */; };
+		71F89F711C906466001C6DFE /* SlideAnimatorInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F89F701C906466001C6DFE /* SlideAnimatorInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		71F89F631C905A6F001C6DFE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		71F89F6A1C905ABC001C6DFE /* SlideOffAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideOffAnimator.swift; sourceTree = "<group>"; };
 		71F89F6B1C905ABC001C6DFE /* SlideInAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideInAnimator.swift; sourceTree = "<group>"; };
+		71F89F6E1C906402001C6DFE /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		71F89F701C906466001C6DFE /* SlideAnimatorInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideAnimatorInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			children = (
 				71F89F6A1C905ABC001C6DFE /* SlideOffAnimator.swift */,
 				71F89F6B1C905ABC001C6DFE /* SlideInAnimator.swift */,
+				71F89F6E1C906402001C6DFE /* Enums.swift */,
+				71F89F701C906466001C6DFE /* SlideAnimatorInteractor.swift */,
 			);
 			name = Animators;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			files = (
 				71F89F6C1C905ABC001C6DFE /* SlideOffAnimator.swift in Sources */,
 				71F89F5A1C905A6F001C6DFE /* ViewController.swift in Sources */,
+				71F89F6F1C906402001C6DFE /* Enums.swift in Sources */,
+				71F89F711C906466001C6DFE /* SlideAnimatorInteractor.swift in Sources */,
 				71F89F581C905A6F001C6DFE /* AppDelegate.swift in Sources */,
 				71F89F6D1C905ABC001C6DFE /* SlideInAnimator.swift in Sources */,
 			);

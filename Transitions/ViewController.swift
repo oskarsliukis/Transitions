@@ -9,9 +9,19 @@
 import UIKit
 
 class ViewController: UIViewController {
+    let animatorInteractor = SlideAnimatorInteractor()
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        animatorInteractor.presentingViewController = self
+    }
+    
+    // MARK: IBAction
+    
     @IBAction func pushController(sender: AnyObject) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let nextViewController = storyboard.instantiateViewControllerWithIdentifier("ViewController")
+        nextViewController.view.addGestureRecognizer(animatorInteractor.gestureRecognizer)
         nextViewController.transitioningDelegate = self
         presentViewController(nextViewController, animated: true, completion: nil)
     }
@@ -19,21 +29,27 @@ class ViewController: UIViewController {
     @IBAction func popController(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
+
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {
+    
     // MARK: UIViewControllerTransitioningDelegate
     
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animator = SlideInAnimator()
-        animator.direction = Direction.Y
-        return animator
+        return SlideInAnimator()
     }
     
     func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let animator = SlideOffAnimator()
-        animator.direction = Direction.Y
-        return animator
+        return SlideOffAnimator()
+    }
+    
+    func interactionControllerForPresentation(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return animatorInteractor.interactionInProgress ? animatorInteractor : nil;
+    }
+    
+    func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        return animatorInteractor.interactionInProgress ? animatorInteractor : nil;        
     }
 }
 

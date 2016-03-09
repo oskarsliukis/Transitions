@@ -6,16 +6,10 @@
 //  Copyright (c) 2015 OL. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-enum Direction {
-    case X
-    case Y
-}
-
 class SlideInAnimator: NSObject, UIViewControllerAnimatedTransitioning {
-    var direction: Direction = Direction.Y
+    var direction: Direction = Direction.X
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.4
