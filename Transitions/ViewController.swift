@@ -16,6 +16,19 @@ class ViewController: UIViewController {
         animatorInteractor.presentingViewController = self
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = getRandomColor()
+    }
+    
+    func getRandomColor() -> UIColor{
+        let randomRed:CGFloat = CGFloat(drand48())
+        let randomGreen:CGFloat = CGFloat(drand48())
+        let randomBlue:CGFloat = CGFloat(drand48())
+        
+        return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
+    }
+    
     // MARK: IBAction
     
     @IBAction func pushController(sender: AnyObject) {
@@ -29,7 +42,7 @@ class ViewController: UIViewController {
     @IBAction func popController(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
     }
-
+    
 }
 
 extension ViewController: UIViewControllerTransitioningDelegate {
@@ -49,7 +62,7 @@ extension ViewController: UIViewControllerTransitioningDelegate {
     }
     
     func interactionControllerForDismissal(animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        return animatorInteractor.interactionInProgress ? animatorInteractor : nil;        
+        return animatorInteractor.interactionInProgress ? animatorInteractor : nil;
     }
 }
 
